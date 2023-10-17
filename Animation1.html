@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent{
+        width: 800px;
+        height: 500px;
+        /* border: 1px solid red; */
+        display: flex;
+        /* position: relative; */
+        margin-left: 30%;
+    }
+    .parent .child{
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(to left bottom,rgb(197, 87, 87),rgba(11, 102, 11, 0.499),rgba(255, 255, 0, 0.542),rgba(0, 128, 0, 0.597));
+        position: relative;
+    }
+    .action{
+        display: flex;
+        justify-content: center;
+    }
+    .parent.open .child{
+        animation: open 4s infinite;
+    }
+    @keyframes open{
+        0%{
+            top: 0;
+            bottom: 0;
+            border-radius: 10%;
+        }
+        25%{
+            left: 500px;
+            top: 0;
+            border-radius: 20%;
+        }
+        50%{
+            left: 500px;
+            top: 400px;
+            border-radius: 30%;
+        }
+        75%{
+            left: 0;
+            top: 400px;
+            border-radius: 50%;
+            background-color: red;
+        }
+        100%{
+            left: 0;
+            top: 0;
+        }
+    }
+    .start{
+        background-color: rgba(10, 203, 10, 0.781);
+    }
+    .stop{
+        background-color: rgba(190, 40, 40, 0.733);
+    }
+    html{
+        background-color: rgba(0, 0, 0, 0.663);
+    }
+</style>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div><br><br><br>
+    <div class="action">
+        <div><button onclick="openlist()" class="start">START</button></div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div><button onclick="closelist()" class="stop">STOP</button></div>
+    </div>
+    <script>
+        let parent=document.querySelector('.parent');
+        let action=document.querySelector('.action');
+        function openlist(){
+            parent.classList.add('open');
+            parent.classList.remove('close');
+        }
+        function closelist(){
+            parent.classList.add('close');
+            parent.classList.remove('open');
+        }
+    </script>
+</body>
+</html>

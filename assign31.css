@@ -1,0 +1,134 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(229, 104, 14); */
+}
+.sai{
+    display: flex;
+}
+/* body{
+    background-color: rgb(229, 104, 14);
+} */
+.logo{
+    font-size: 40px;
+    background: linear-gradient(to left,rgb(189, 21, 21),rgb(21, 187, 21),rgb(23, 23, 208));
+}
+a{
+    text-decoration: none;
+}
+.menu{
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    /* background-color: rgb(253, 108, 5); */
+
+}
+.menu a{
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    font-size: 20px;
+    color:rgba(0, 0, 0, 0.873);
+    background-color: rgb(253, 108, 5);
+}
+.HOME{
+    width: minmax(90%);
+    height: minmax(500px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.HOME div{
+    /* width: 50;
+    border: 1px solid red; */
+}
+img{
+    width: 60%;
+}
+.first{
+    background-color: rgb(188, 92, 23);
+}
+h1{
+    text-align: center;
+    color: brown;
+}
+@media  screen and (max-width:700px) {
+    .sai{
+        display: none;
+    }
+    .imgal{
+        display: none;
+    }
+}
+.secound{
+    width: minmax(900px);
+    height: minmax(900px);
+    /* border: 1px solid red; */
+}
+.secound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.se{
+    width: 700px;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.secound img{
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+}
+.secound img:hover{
+    animation: sss 5s 1;
+    animation-fill-mode: forwards;
+}
+@keyframes sss{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+button{
+    margin-left: 50%;
+    background-color: black;
+    color: white;
+} 
+.footer{
+    width: minmax(80%);
+    height: 500px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.844);
+}
+.footer div{
+    width: 100px;
+    height: 400px;
+    /* border: 1px solid red; */
+    /* margin: 5px; */
+    background-color:rgba(0, 0, 0, 0.325) ;
+}
+input{
+    border: none;
+    outline: none;
+}
+.su-sai{
+    background-color: white;
+}
+span{
+    color: rgba(232, 15, 37, 0.875);
+}
+body{
+    scroll-behavior: smooth;
+}
+html{
+    scroll-behavior: smooth;
+}

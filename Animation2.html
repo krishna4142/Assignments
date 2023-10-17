@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            width: 100%;
+            height: 500px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-left: 20%; */
+        }
+        .child{
+            height: 100px;
+            width: 100px;
+            /* border: 1px solid red; */
+            background: linear-gradient(to bottom right,rgba(255, 0, 0, 0.632),rgba(0, 128, 0, 0.719),rgba(0, 0, 255, 0.577),rgba(255, 255, 0, 0.615),pink);
+            border-radius: 50%;
+        }
+        .action{
+            display: flex;
+            justify-content: center;
+        }
+        .parent.open .child{
+            animation: open 5s 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes open{
+            to{
+                transform: scale(3);
+            }
+        }
+        .action.close .stop{
+            animation: close 5s 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes close{
+            to{
+                transform: scale(0);
+            }
+        }
+        .start{
+            background-color: rgba(0, 128, 0, 0.81);
+        }
+        .stop{
+            background-color: rgba(223, 23, 23, 0.773);
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+        html{
+            background-color: rgba(0, 0, 0, 0.751);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div><br><br><br><br>
+    <div class="action">
+        <div><button onclick="openlink()" class="start">START</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div><button onclick="closelink()" class="stop">STOP</button></div>
+    </div>
+    <script>
+        let parent=document.querySelector('.parent');
+        function openlink(){
+            parent.classList.add('open');
+            parent.classList.remove('close');
+        }
+        function closelink(){
+            parent.classList.add('close');
+            parent.classList.remove('open');
+        }
+    </script>
+</body>
+</html>

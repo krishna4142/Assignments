@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            width: 100%;
+            height: 500px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .child{
+            width: 200px;
+            height: 200px;
+            /* border: 1px solid red; */
+            background: linear-gradient(to left bottom,rgba(0, 128, 0, 0.947),rgba(0, 0, 255, 0.853),rgba(47, 255, 0, 0.881),rgba(255, 255, 255, 0.821),rgba(255, 255, 0, 0.914));
+        }
+        .action{
+            display: flex;
+            justify-content: center;
+        }
+        .parent.open .child{
+            animation: open 5s 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes open{
+            to{
+                transform: rotate(30deg);
+            }
+        }
+        .start{
+        background-color: rgba(10, 203, 10, 0.781);
+    }
+    .stop{
+        background-color: rgba(190, 40, 40, 0.733);
+    }
+    html{
+        background-color: rgba(0, 0, 0, 0.663);
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div><br><br><br><br>
+    <div class="action">
+        <div><button class="start" onclick="openlink()">START</button></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div><button class="stop" onclick="closelink()">STOP</button></div>
+    </div>
+    <script>
+        let parent=document.querySelector('.parent');
+        let action=document.querySelector('.action');
+        function openlink(){
+            parent.classList.add('open');
+            parent.classList.remove('close');
+        }
+        function closelink(){
+            parent.classList.add('close');
+            parent.classList.remove('open');
+        }
+    </script>
+</body>
+</html>
